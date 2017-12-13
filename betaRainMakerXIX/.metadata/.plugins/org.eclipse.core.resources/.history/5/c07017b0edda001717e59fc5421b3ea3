@@ -1,0 +1,79 @@
+package org.usfirst.frc.team360.Subsystem;
+
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.command.*;
+import org.usfirst.frc.team360.robot.*;
+
+import com.ctre.CANTalon;
+
+import org.usfirst.frc.team360.commands.JoyStickTankDrive;
+
+public class DriveTrain extends Subsystem{
+	
+	RobotDrive myDrive;
+	static CANTalon motorR1 = RobotMap.motorR1;
+	static CANTalon motorR2 = RobotMap.motorR2;
+	static CANTalon motorL1 = RobotMap.motorL1;
+	static CANTalon motorL2 = RobotMap.motorL2;
+	
+	Encoder RightDriveEncoder = RobotMap.rightDriveTrain;
+	Encoder LeftDriveEncoder = RobotMap.leftDriveTrain;
+	
+	public void robotInit() {
+		myDrive = new RobotDrive( motorR1, motorR2, motorL1, motorL2);
+	}
+	
+	public void Drive(double LMotor, double RMotor){
+		motorR1.set(-RMotor);
+		motorR2.set(-RMotor);
+		motorL1.set(LMotor);
+		motorL2.set(LMotor);
+	}
+	public static void RightDrive(double RMotor){
+		motorR1.set(-RMotor);
+		motorR2.set(-RMotor);
+	}
+	
+	public static void LeftDrive(double LMotor){
+		motorL1.set(LMotor);
+		motorL2.set(LMotor);
+	}
+	
+	public void StopRight(){
+		motorR1.stopMotor();
+		motorR2.stopMotor();
+	}
+	
+	public void StopLeft(){
+		motorL1.stopMotor();
+		motorL2.stopMotor();
+	}
+	
+	public void StopDrive(){
+		motorR1.stopMotor();
+		motorR2.stopMotor();
+		motorL1.stopMotor();
+		motorL2.stopMotor();
+	}
+	
+	public void resetEncoders(){
+		RightDriveEncoder.reset();
+		LeftDriveEncoder.reset();
+	}
+	
+	public void ResetRight(){
+		RightDriveEncoder.reset();
+	}
+	public void ResetLeft(){
+		LeftDriveEncoder.reset();
+	}
+	
+	@Override
+	protected void initDefaultCommand() {
+		setDefaultCommand(new JoyStickTankDrive());
+		
+	}
+
+}

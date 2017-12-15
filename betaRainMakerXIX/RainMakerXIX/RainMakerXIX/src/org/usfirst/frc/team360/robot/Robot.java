@@ -4,6 +4,8 @@ import org.usfirst.frc.team360.Subsystem.DriveTrain;
 import org.usfirst.frc.team360.Subsystem.LEDLights;
 import org.usfirst.frc.team360.Subsystem.Pneumatics;
 import org.usfirst.frc.team360.Subsystem.Shifter;
+import org.usfirst.frc.team360.Subsystem.navX;
+
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,6 +25,7 @@ public class Robot extends IterativeRobot {
 	public static Compressor compressor;
 	public static Shifter shifter;
 	public static LEDLights lights;
+	public static navX navX;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -34,6 +37,7 @@ public class Robot extends IterativeRobot {
 		pneumatics = new Pneumatics();
 		compressor = new Compressor();
 		lights = new LEDLights();
+		navX = new navX();
 	}
 
 	/**

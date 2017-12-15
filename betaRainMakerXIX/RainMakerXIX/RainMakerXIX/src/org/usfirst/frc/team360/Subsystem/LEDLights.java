@@ -5,10 +5,10 @@ import edu.wpi.first.wpilibj.Relay;
 
 public class LEDLights {
 	public static Relay lights = RobotMap.lights;
-	public void open(){ 
+	public void on(){ 
 		lights.set(Relay.Value.kForward);
 	}
-	public void close() {
+	public void off() {
 		lights.set(Relay.Value.kReverse);
 	}
     public void initDefaultCommand() {

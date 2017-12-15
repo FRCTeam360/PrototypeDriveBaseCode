@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.Timer;
 
 public class RobotMap {
 	public static CANTalon motorR1 = new CANTalon (0);
@@ -23,6 +24,11 @@ public class RobotMap {
 	public static PowerDistributionPanel PDP = new PowerDistributionPanel();
 	
 	public static AHRS navX = new AHRS(SPI.Port.kMXP);
+	public static float accelX;
+	public static float accelY;
+	public static double[] someDistance;
+	public static Timer time;
+	
 	public static DoubleSolenoid shifter = new DoubleSolenoid (0,1);
 	
 // 7-bit address 0x70

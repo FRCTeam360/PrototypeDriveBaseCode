@@ -14,7 +14,7 @@ public class LightsOff {
 
 	// Called just before this Command runs the first time
     protected void initialize(){
-    	Robot.lights.close();
+    	Robot.lights.off();
     }
 
     // Called repeatedly when this Command is scheduled to run

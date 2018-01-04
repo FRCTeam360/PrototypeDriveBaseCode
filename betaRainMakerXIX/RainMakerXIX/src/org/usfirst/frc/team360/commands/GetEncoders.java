@@ -19,10 +19,10 @@ public class GetEncoders extends Command{
     protected void execute() {
     	SmartDashboard.putNumber("LftencPos", Robot.drivetrain.LeftEncoderValue());
     	SmartDashboard.putNumber("RgtencPos", Robot.drivetrain.RightEncoderValue());
-    	SmartDashboard.putNumber("LftencVel", Robot.drivetrain.LeftEncoderVelocity());
+    	SmartDashboard.putNumber("LftencVel", (-1* Robot.drivetrain.LeftEncoderVelocity()));
     	SmartDashboard.putNumber("RgtencVel", Robot.drivetrain.RightEncoderVelocity());
-    	SmartDashboard.putBoolean("RgtStatus", Robot.drivetrain.RightEncoderStatus());
-    	SmartDashboard.putBoolean("LftStatus", Robot.drivetrain.LeftEncoderStatus());
+    	//SmartDashboard.putBoolean("RgtStatus", Robot.drivetrain.RightEncoderStatus());
+    	//SmartDashboard.putBoolean("LftStatus", Robot.drivetrain.LeftEncoderStatus());
     }
 
     // Make this return true when this Command no longer needs to run execute()

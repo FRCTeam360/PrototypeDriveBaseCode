@@ -10,13 +10,9 @@ public class ShiftDown extends Command{
 		requires(Robot.shifter);
     }
 
-	private void requires(Shifter shifter) {
-		
-	}
-
 	// Called just before this Command runs the first time
     protected void initialize(){
-    	Robot.shifter.close();;
+    	Robot.shifter.close();
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -1,19 +1,13 @@
 package org.usfirst.frc.team360.commands;
 
-import org.usfirst.frc.team360.Subsystem.Shifter;
 import org.usfirst.frc.team360.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ShiftUp extends Command{
+public class ShiftUp extends Command {
 	
 	public ShiftUp() {
 		requires(Robot.shifter);
     }
-
-	private void requires(Shifter shifter) {
-		
-	}
 
 	// Called just before this Command runs the first time
     protected void initialize(){

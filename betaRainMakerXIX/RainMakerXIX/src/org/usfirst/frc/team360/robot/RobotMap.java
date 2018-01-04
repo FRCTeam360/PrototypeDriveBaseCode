@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.SPI;
 
 public class RobotMap {
-	public static CANTalon motorR1 = new CANTalon (0);
-	public static CANTalon motorR2 = new CANTalon (1);
+	public static CANTalon motorR1 = new CANTalon (1);
+	public static CANTalon motorR2 = new CANTalon (0);
 	public static CANTalon motorL1 = new CANTalon (2);
 	public static CANTalon motorL2 = new CANTalon (3);
 	
@@ -20,7 +20,7 @@ public class RobotMap {
 	public static PowerDistributionPanel PDP = new PowerDistributionPanel();
 	
 	public static AHRS navX = new AHRS(SPI.Port.kMXP);
-	public static DoubleSolenoid shifter = new DoubleSolenoid (0,1);
+	public static DoubleSolenoid shifter = new DoubleSolenoid (1,3);
 	
 // 7-bit address 0x70
 // 8-bit address 0xE0
